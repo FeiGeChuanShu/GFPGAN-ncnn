@@ -4,7 +4,7 @@ The ncnn demo of **GFPGAN aims at developing Practical Algorithms for Real-world
 ### 1.encoder  
 this model converted from onnx.  
 ### 2.stylegan  
-this model consist of low level op api the forward.(this is stupid)  
+forward of this model consist of some low level op apis.(this is very stupid)  
 ### 3.real-esrgan  
 
 ## Result 
