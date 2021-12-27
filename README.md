@@ -4,7 +4,8 @@ a naive ncnn implementation of **GFPGAN aims at developing Practical Algorithms 
 ### 1.GFPGANCleanv1-NoCE-C2  
 
 ## Result 
-![](result.jpg)  
+![](result_1.jpg)  
+![](result_2.jpg)  
 
 ## Reference  
 1.https://github.com/xinntao/Real-ESRGAN  
