@@ -1,7 +1,8 @@
 # GFPGAN-ncnn  
 a naive ncnn implementation of **GFPGAN aims at developing Practical Algorithms for Real-world Face Restoration**  
 ## model support:  
-### 1.GFPGANCleanv1-NoCE-C2 [Baidu Pan](https://pan.baidu.com/s/1zbVwK7kh6uVfWgq9AZDJDA) (i4xb)  
+### 1.GFPGANCleanv1-NoCE-C2 
+All models are available in [Baidu Pan](https://pan.baidu.com/s/1zbVwK7kh6uVfWgq9AZDJDA) (i4xb)  
 
 ## Result 
 ![](result_1.jpg)  
