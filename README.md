@@ -1,5 +1,5 @@
 # GFPGAN-ncnn  
-The ncnn demo of **GFPGAN aims at developing Practical Algorithms for Real-world Face Restoration**  
+a stupid ncnn implementation of **GFPGAN aims at developing Practical Algorithms for Real-world Face Restoration**  
 ## model support:  
 ### 1.GFPGANCleanv1-NoCE-C2  
 
