@@ -1,11 +1,7 @@
 # GFPGAN-ncnn  
 The ncnn demo of **GFPGAN aims at developing Practical Algorithms for Real-world Face Restoration**  
-## 3 parts of model:  
-### 1.encoder  
-this model converted from onnx.  
-### 2.stylegan  
-forward of this model consist of some low level op apis.(this is very stupid)  
-### 3.real-esrgan  
+## model support:  
+### 1.GFPGANCleanv1-NoCE-C2  
 
 ## Result 
 ![](result.jpg)  
