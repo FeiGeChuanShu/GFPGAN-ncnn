@@ -243,7 +243,7 @@ static void scale(const ncnn::Mat& in, const float& scale, int scale_data_size, 
     // set param
     ncnn::ParamDict pd;
     pd.set(0, scale_data_size);// scale_data_size
-    pd.set(1, 0);// kernel_w
+    pd.set(1, 0);// bias_term
 
     op->load_param(pd);
 
