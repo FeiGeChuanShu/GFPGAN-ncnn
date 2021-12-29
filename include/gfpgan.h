@@ -9,9 +9,7 @@
 #include <chrono>
 #include <stdio.h>
 #include <fstream>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/opencv.hpp>
 //ncnn
 #include "net.h"
 #include "cpu.h"
@@ -94,7 +92,7 @@ public:
 
     int load(const std::string& param_path, const std::string& model_path, const std::string& style_path);
 
-    int process(const ncnn::Mat& inimage, ncnn::Mat& outimage);
+    int process(const cv::Mat& img, ncnn::Mat& outimage);
 
 private:
     int modulated_conv(ncnn::Mat& x, ncnn::Mat& style,
@@ -117,6 +115,8 @@ private:
     int load_weights(const char* model_path, std::vector<StyleConvWeights>& style_conv_weights,
         std::vector<ToRgbConvWeights>& to_rgbs_conv_weights, ncnn::Mat& const_input);
 private:
+    const float mean_vals[3] = { 127.5f, 127.5f, 127.5f };
+    const float norm_vals[3] = { 1 / 127.5f, 1 / 127.5f, 1 / 127.5f };
     std::vector<StyleConvWeights> style_conv_weights;
     std::vector<ToRgbConvWeights> to_rgbs_conv_weights;
     ncnn::Mat const_input;

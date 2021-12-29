@@ -36,11 +36,11 @@
 #define NCNN_MSA 0
 #define NCNN_MMI 0
 #define NCNN_RVV 0
-#define NCNN_INT8 1
-#define NCNN_BF16 1
+#define NCNN_INT8 0
+#define NCNN_BF16 0
 #define NCNN_FORCE_INLINE 1
 
-#define NCNN_VERSION_STRING "1.0.20211213"
+#define NCNN_VERSION_STRING "1.0.20211229"
 
 #include "ncnn_export.h"
 

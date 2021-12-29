@@ -39,4 +39,4 @@
 #  endif
 #endif
 
-#endif
+#endif /* NCNN_EXPORT_H */

@@ -3,11 +3,9 @@
 #include "gfpgan.h"
 
 GFPGAN::GFPGAN()
-{	
-
+{
     net.opt.use_vulkan_compute = false;
     net.opt.num_threads = 4;
-
 }
 
 GFPGAN::~GFPGAN()
@@ -24,7 +22,7 @@ static ncnn::Mat generate_noise(const int& c, const int& h, const int& w, const 
     std::normal_distribution<double> dis(0, 1);
 
     ncnn::Mat noise = ncnn::Mat(w, h, c);
-    for (int i = 0; i < noise.total(); i++)
+    for (size_t i = 0; i < noise.total(); i++)
         noise[i] = dis(gen) * weight[0];
 
     return noise;
@@ -243,7 +241,7 @@ static void scale(const ncnn::Mat& in, const float& scale, int scale_data_size, 
     // set param
     ncnn::ParamDict pd;
     pd.set(0, scale_data_size);// scale_data_size
-    pd.set(1, 0);// kernel_w
+    pd.set(1, 0);// bias_term
 
     op->load_param(pd);
 
@@ -331,7 +329,6 @@ int GFPGAN::modulated_conv(ncnn::Mat& x, ncnn::Mat& style,
     for (int i = 0; i < weight.c; i++)
     {
         ncnn::Mat channel = weight.channel(i);
-        float sum = 0;
         for (int j = 0; j < weight.d; j++)
         {
             ncnn::Mat d = channel.channel(j);
@@ -548,10 +545,13 @@ int GFPGAN::load(const std::string& param_path, const std::string& model_path, c
 
     return 0;
 }
-int GFPGAN::process(const ncnn::Mat& inimage, ncnn::Mat& outimage)
+int GFPGAN::process(const cv::Mat& img, ncnn::Mat& outimage)
 {
+    ncnn::Mat ncnn_in = ncnn::Mat::from_pixels_resize(img.data, ncnn::Mat::PIXEL_BGR2RGB, img.cols, img.rows, 512, 512);
+    ncnn_in.substract_mean_normalize(mean_vals, norm_vals);
+
     ncnn::Extractor ex = net.create_extractor();
-    ex.input("input.1", inimage);
+    ex.input("input.1", ncnn_in);
 
     ncnn::Mat styles;
     ex.extract("420", styles);
