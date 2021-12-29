@@ -5,7 +5,7 @@ a naive ncnn implementation of **GFPGAN aims at developing Practical Algorithms 
 All models are available in [Baidu Pan](https://pan.baidu.com/s/1zbVwK7kh6uVfWgq9AZDJDA) (i4xb)  
 
 ### TODO:  
-1.whole image restore  
+1.~~whole image restore~~  
 2.windows gui demo  
 3.support ncnn-vulkan  
 4.model with colorization
