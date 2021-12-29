@@ -8,6 +8,7 @@ All models are available in [Baidu Pan](https://pan.baidu.com/s/1zbVwK7kh6uVfWgq
 1.whole image restore  
 2.windows gui demo  
 3.support ncnn-vulkan  
+4.model with colorization
 ## Result 
 ![](result_1.jpg)  
 ![](result_2.jpg)  
